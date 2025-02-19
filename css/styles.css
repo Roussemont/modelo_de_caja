@@ -9,19 +9,21 @@
 
 body{
     background-color: blueviolet;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea */
+    justify-content: center; /* Centra las columnas */
+    gap: 20px; /* Espacio entre las cajas */
   
-   
+    margin: 25px;
 }
 
 
 
 /*Selector de caja*/
 
-.caja{ 
+.caja, .caja2, .caja3, .caja4{ 
 
     background-color: aquamarine;
-    width: 600px;
-   
 
     /*Unica forma de centrar*/
 
@@ -38,8 +40,11 @@ body{
     border-radius: 20px;
 
     border-top-right-radius: 60px;
-    outline:  20px solid rgb(241, 110, 187);
-    margin-top: 40px;
+    outline: 10px solid rgb(226, 115, 178);
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    width: calc(50% - 20px); /* Hace que cada caja ocupe el 50% del ancho con espacio */
   
 
 }
@@ -81,3 +86,100 @@ body{
     background-color: blueviolet;
     box-shadow: -10px -10px  20px blue; /*negativo o positivo guian la sombra*/
 }
+
+.caja2{
+    animation: mover 2s infinite alternate; /*agregarr movimiento*/
+}
+
+
+
+.caja2 a{
+    background-color: brown ;
+    color: white;
+    text-decoration: dashed;
+    border-radius: 100px;
+   display: block;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+/*Animacion para que se mueva*/
+
+
+@keyframes mover {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(50px); }
+    100% { transform: translateX(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.caja3{
+    animation: bounce 0.5s infinite alternate;
+}
+
+.caja4{
+
+    animation: fade-in 1s ease-in-out;
+}
+   
+.caja3 a{
+    background-color: blueviolet;
+    color: azure;
+    text-decoration: dashed;
+    border-radius: 100px;
+    padding: 10px;
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    font-style: oblique;
+    font-weight: bold;
+    text-decoration: dashed;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+
+
+
+    
+}
+
+
+.boton:hover {
+    transform: scale(4.8);
+}
+
+.boton:hover {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+}
+
+
+   
+    
+
